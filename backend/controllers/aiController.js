@@ -30,7 +30,8 @@ exports.analyzeComplaint = async (req, res) => {
         }`;
 
         const response = await axios.post('https://openrouter.ai/api/v1/chat/completions', {
-            model: "google/gemini-2.5-flash-8b",
+            model: "google/gemini-2.5-flash",
+            max_tokens: 800,
             messages: [{ role: "user", content: prompt }]
         }, {
             headers: {
